@@ -1,0 +1,63 @@
+<div class="container">
+
+    <div class="post-container">
+        
+        <div class="post-actions-container">
+            <mat-form-field appearance = "fill">
+                <textarea 
+                [(ngModel)] = "text"
+                matInput cdkTextareaAutosize cdkAutosizeMinRows = "5" placeholder = "Say something..."></textarea>
+            </mat-form-field>
+            <div class="post-button">
+                <button mat-raised-button color = "primary"
+                (click) = "post()"
+                >Post</button>
+            </div>
+             
+    <!-- <mat-form-field>
+        <ngx-mat-file-input formControlName="basicfile" placeholder="Basic Input" ></ngx-mat-file-input>
+        <mat-icon matSuffix>folder</mat-icon>
+      </mat-form-field> -->
+            
+        </div>
+        
+    
+        <mat-card class="post-card" *ngFor = "let post of posts.reverse(); let i = index">
+            <mat-card-header>
+              <mat-card-title>{{post.username}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src={{post.imageUrl}}>
+            <mat-card-content>
+              <p>
+                {{post.caption}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-icon-button color="warn"
+                (click) = "like(post.id)"
+                >
+                    <mat-icon>{{post.likes.indexOf(this.userService.user.id) >= 0? 'favorite': 'favorite_border'}}</mat-icon>
+                  </button><span>{{post.likes.length}} liked it</span>
+            </mat-card-actions>
+
+            <div class="comments-container">
+                <div class="comments">
+                    <div class="title">Comments</div>
+                    <p *ngFor = "let comment of post.comments"><b>{{comment.username}}:</b> {{comment.comment}} </p>
+                </div>
+                
+                <div class="comment-input">
+                    <mat-form-field class="comment-fom-field">
+                        <input type="text" 
+                        [(ngModel)] = "commentText[i]"
+                        matInput placeholder="add a comment">
+                    </mat-form-field>
+                    <button class = "comment-button" mat-button
+                    (click) = "comment(post.id, i)">Comment</button>
+                </div>
+            </div>
+            
+        </mat-card>
+    </div>
+    
+</div>

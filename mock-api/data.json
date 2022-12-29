@@ -1,0 +1,95 @@
+{
+  "users": [
+    {
+      "email": "test@test.com",
+      "username": "testUser",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "email": "test2@test.com",
+      "username": "test2",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "email": "test3@test.com",
+      "username": "testUser3",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "email": "test4@test.com",
+      "username": "testUser4",
+      "password": "123456",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "username": "testUser",
+      "imageUrl": "src/assets/shiba2.jpg",
+      "caption": "something something",
+      "likes": [],
+      "comments": [],
+      "id": 1
+    },
+    {
+      "username": "testUser",
+      "imageUrl": "src/assets/shiba2.jpg",
+      "caption": "something something",
+      "likes": [],
+      "comments": [],
+      "id": 2
+    },
+    {
+      "username": "testUser",
+      "imageUrl": "assets/shiba2.jpg",
+      "caption": "something something",
+      "likes": [],
+      "comments": [],
+      "id": 3
+    },
+    {
+      "username": "testUser",
+      "imageUrl": "assets/shiba2.jpg",
+      "caption": "something something\n",
+      "likes": [],
+      "comments": [],
+      "id": 4
+    },
+    {
+      "username": "testUser",
+      "imageUrl": "assets/shiba2.jpg",
+      "caption": "something something\n",
+      "likes": [],
+      "comments": [],
+      "id": 5
+    },
+    {
+      "username": "testUser",
+      "imageUrl": "assets/shiba2.jpg",
+      "caption": "something something",
+      "likes": [
+        1
+      ],
+      "comments": [],
+      "id": 6
+    },
+    {
+      "username": "testUser",
+      "imageUrl": "assets/shiba2.jpg",
+      "caption": "hello",
+      "likes": [
+        1
+      ],
+      "comments": [
+        {
+          "username": "testUser",
+          "comment": "test"
+        }
+      ],
+      "id": 7
+    }
+  ]
+}

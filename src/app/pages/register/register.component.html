@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="form-container">
+        <div class="title"><h1>Create an Account</h1></div>
+        <form [formGroup] = "registerForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your email</mat-label>
+                <input type = "text" matInput
+                formControlName = "email"
+                />
+                <mat-error *ngIf = "registerForm.controls['email'].invalid">
+                    {{registerForm.controls['email'].hasError('required')? "Email is required." : "Enter a valid email."}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your username</mat-label>
+                <input type = "text" matInput
+                formControlName = "username"
+                />
+                <mat-error *ngIf = "registerForm.controls['username'].invalid">
+                    {{registerForm.controls['username'].hasError('required')? "Username is required." : "Username can be at most 10 characters."}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input type = "password" matInput
+                formControlName = "password"
+                />
+                <mat-error *ngIf = "registerForm.controls['password'].invalid">
+                    {{registerForm.controls['password'].hasError('required')? "Password is required." : "Password must be at least 6 characters."}}
+                </mat-error>
+            </mat-form-field>
+        </form>
+        {{registerForm.value | json}}
+        <div class="button-container">
+           <button mat-raised-button class="login-button" color="primary"
+           [disabled] = "registerForm.invalid"
+           (click) = "create()"
+           >Register</button>
+           <p>OR</p>
+           <button mat-raised-button class="register-button"
+           routerLink = "/login"
+           >Login</button>
+        </div>
+    </div>
+</div>
